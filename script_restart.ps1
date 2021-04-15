@@ -1,11 +1,11 @@
-﻿# Made by: Tiago Ramada
+# Made by: Tiago Ramada
 # Date: 14/04/2021
 
 
-# Importamos a assembly para podermos criar uma janela
+# Import required Assembly
 [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
 
-# Desenhar o a janela e os controlos
+# Drawing forms and controls
 $Form_Window = New-Object System.Windows.Forms.Form
     $Form_Window.Text = "PowerShell"
     $Form_Window.Size = New-Object System.Drawing.Size(272,160)
@@ -17,7 +17,7 @@ $Form_Window = New-Object System.Windows.Forms.Form
     $Form_Window.StartPosition = "CenterScreen"
     $Form_Window.Font = "Segoe UI"
 
-# Adiciona uma label
+# Adding a label
 $label_Window = New-Object System.Windows.Forms.Label
     $label_Window.Location = New-Object System.Drawing.Size(8,8)
     $label_Window.Size = New-Object System.Drawing.Size(240,32)
@@ -26,7 +26,7 @@ $label_Window = New-Object System.Windows.Forms.Label
     $Form_Window.Controls.Add($label_Window)
 
 
-# Adiciona o restart button
+# Adding a button
 $button_ClickMe = New-Object System.Windows.Forms.Button
    $button_ClickMe.Location = New-Object System.Drawing.Size(8,80)
    $button_ClickMe.Size = New-Object System.Drawing.Size(240,32)
@@ -38,6 +38,6 @@ $button_ClickMe = New-Object System.Windows.Forms.Button
    })
    $Form_Window.Controls.Add($button_ClickMe)
 
-# Mostra a janela
+# Show form
 $Form_Window.Add_Shown({$Form_Window.Activate()})
 [void] $Form_Window.ShowDialog()
